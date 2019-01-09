@@ -1,0 +1,2752 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AA72BAF8-051B-4971-8F5E-B93E0FE474BB}</ProjectGuid>
+        <ProjectVersion>18.4</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>StaticLibrary</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <UsePackages>true</UsePackages>
+        <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+        <FinalOutputDir>.\Build</FinalOutputDir>
+        <BCC_wpar>false</BCC_wpar>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+        <ProjectType>CppStaticLibrary</ProjectType>
+        <PackageImports>CloudService;DataSnapFireDAC;emsclient;emsclientfiredac;FireDAC;FireDACCommon;FireDACCommonDriver;FireDACIBDriver;FireDACSqliteDriver;inet;RESTBackendComponents;RESTComponents;soapmidas;soaprtl;soapserver;$(PackageImports)</PackageImports>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>activemq_cpp_lib</SanitizedProjectName>
+        <IncludePath>..\src\main\decaf\lang\exceptions\;..\src\main\decaf\util\concurrent\locks\;..\src\main\decaf\util\concurrent\atomic\;..\src\main\decaf\util\zip\;..\src\main\decaf\util\logging\;..\src\main\decaf\util\concurrent\;..\src\main\decaf\util\comparators\;..\src\main\decaf\util\;..\src\main\decaf\security\cert\;..\src\main\decaf\security\auth\x500\;..\src\main\decaf\security\;..\src\main\decaf\nio\;..\src\main\decaf\net\;..\src\main\decaf\io\;..\src\main\decaf\internal\util\zip\;..\src\main\decaf\internal\util\concurrent\windows\;..\src\main\decaf\internal\util\concurrent\;..\src\main\decaf\internal\util\;..\src\main\decaf\internal\security\windows\;..\src\main\decaf\internal\security\provider\crypto\;..\src\main\decaf\internal\security\provider\;..\src\main\decaf\internal\security\;..\src\main\decaf\internal\nio\;..\src\main\decaf\internal\net\tcp\;..\src\main\decaf\internal\net\ssl\openssl\;..\src\main\decaf\internal\net\ssl\;..\src\main\decaf\internal\net\https\;..\src\main\decaf\internal\net\http\;..\src\main\decaf\internal\net\file\;..\src\main\decaf\internal\net\;..\src\main\decaf\internal\io\;..\src\main\decaf\internal\;..\src\main\activemq\wireformat\stomp\;..\src\main\activemq\wireformat\openwire\utils\;..\src\main\activemq\wireformat\openwire\marshal\generated\;..\src\main\activemq\wireformat\openwire\marshal\;..\src\main\activemq\wireformat\openwire\;..\src\main\activemq\wireformat\;..\src\main\activemq\util\;..\src\main\activemq\transport\tcp\;..\src\main\activemq\transport\mock\;..\src\main\activemq\transport\logging\;..\src\main\activemq\transport\inactivity\;..\src\main\activemq\transport\failover\;..\src\main\activemq\transport\correlator\;..\src\main\activemq\transport\;..\src\main\activemq\threads\;..\src\main\activemq\state\;..\src\main\activemq\library\;..\src\main\activemq\io\;..\src\main\activemq\exceptions\;..\src\main\activemq\core\policies\;..\src\main\activemq\core\kernels\;..\src\main\activemq\core\;..\src\main\activemq\commands\;..\src\main;..\src\main\cms\;..\src\main\activemq\cmsutil\;C:\Users\alexba\Documents\Embarcadero\Studio\apr-1.6.3\bcc;C:\Users\alexba\Documents\Embarcadero\Studio\apr-1.6.3\include;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\src\main\decaf\lang\;..\src\main\decaf\lang\exceptions\;..\src\main\decaf\util\concurrent\locks\;..\src\main\decaf\util\concurrent\atomic\;..\src\main\decaf\util\zip\;..\src\main\decaf\util\logging\;..\src\main\decaf\util\concurrent\;..\src\main\decaf\util\comparators\;..\src\main\decaf\util\;..\src\main\decaf\security\cert\;..\src\main\decaf\security\auth\x500\;..\src\main\decaf\security\;..\src\main\decaf\nio\;..\src\main\decaf\net\;..\src\main\decaf\io\;..\src\main\decaf\internal\util\zip\;..\src\main\decaf\internal\util\concurrent\windows\;..\src\main\decaf\internal\util\concurrent\;..\src\main\decaf\internal\util\;..\src\main\decaf\internal\security\windows\;..\src\main\decaf\internal\security\provider\crypto\;..\src\main\decaf\internal\security\provider\;..\src\main\decaf\internal\security\;..\src\main\decaf\internal\nio\;..\src\main\decaf\internal\net\tcp\;..\src\main\decaf\internal\net\ssl\openssl\;..\src\main\decaf\internal\net\ssl\;..\src\main\decaf\internal\net\https\;..\src\main\decaf\internal\net\http\;..\src\main\decaf\internal\net\file\;..\src\main\decaf\internal\net\;..\src\main\decaf\internal\io\;..\src\main\decaf\internal\;..\src\main\activemq\wireformat\stomp\;..\src\main\activemq\wireformat\openwire\utils\;..\src\main\activemq\wireformat\openwire\marshal\generated\;..\src\main\activemq\wireformat\openwire\marshal\;..\src\main\activemq\wireformat\openwire\;..\src\main\activemq\wireformat\;..\src\main\activemq\util\;..\src\main\activemq\transport\tcp\;..\src\main\activemq\transport\mock\;..\src\main\activemq\transport\logging\;..\src\main\activemq\transport\inactivity\;..\src\main\activemq\transport\failover\;..\src\main\activemq\transport\correlator\;..\src\main\activemq\transport\;..\src\main\activemq\threads\;..\src\main\activemq\state\;..\src\main\activemq\library\;..\src\main\activemq\io\;..\src\main\activemq\exceptions\;..\src\main\activemq\core\policies\;..\src\main\activemq\core\kernels\;..\src\main\activemq\core\;..\src\main\activemq\commands\;..\src\main\cms\;..\src\main\activemq\cmsutil\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <AllPackageLibs>svn.lib;rtl.lib</AllPackageLibs>
+        <Defines>__MT__;WIN32_LEAN_AND_MEAN;NOMINMAX;APR_DECLARE_STATIC;APU_DECLARE_STATIC;API_DECLARE_STATIC;WIN32;$(Defines)</Defines>
+        <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
+        <SubProcessesNumber>4</SubProcessesNumber>
+        <_TCHARMapping>char</_TCHARMapping>
+        <BCC_PCHUsage>None</BCC_PCHUsage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <PackageImports>adortl;appanalytics;AWButton_X1023;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CodeSiteExpressPkg;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;Jcl;JclContainers;JclDeveloperTools;JclVcl;JvAppFrm;JvBands;JvCmp;JvControls;JvCore;JvCrypt;JvCustom;JvDB;JvDlgs;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvStdCtrls;JvSystem;JvTimeFramework;JvWizards;JvXPCtrls;rtl;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <PackageImports>adortl;appanalytics;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;rtl;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <Defines>_DEBUG;$(Defines)</Defines>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <DCC_Define>DEBUG</DCC_Define>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <BCC_EnableCPPExceptions>true</BCC_EnableCPPExceptions>
+        <BCC_DisableFramePtrElimOpt>true</BCC_DisableFramePtrElimOpt>
+        <BCC_DisableSpellChecking>true</BCC_DisableSpellChecking>
+        <CLANG_UnwindTables>true</CLANG_UnwindTables>
+        <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Manifest_File>(None)</Manifest_File>
+        <LinkPackageImports>svn.bpi;rtl.bpi</LinkPackageImports>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+        <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Manifest_File>(None)</Manifest_File>
+        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="..\src\main\activemq\cmsutil\CachedConsumer.cpp">
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\CachedProducer.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\CmsAccessor.cpp">
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\CmsDestinationAccessor.cpp">
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\CmsTemplate.cpp">
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\DestinationResolver.cpp">
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\DynamicDestinationResolver.cpp">
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\MessageCreator.cpp">
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\PooledSession.cpp">
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\ProducerCallback.cpp">
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\ResourceLifecycleManager.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\SessionCallback.cpp">
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\cmsutil\SessionPool.cpp">
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQBlobMessage.cpp">
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQBytesMessage.cpp">
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQDestination.cpp">
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQMapMessage.cpp">
+            <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQMessage.cpp">
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQObjectMessage.cpp">
+            <BuildOrder>19</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQQueue.cpp">
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQStreamMessage.cpp">
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQTempDestination.cpp">
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQTempQueue.cpp">
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQTempTopic.cpp">
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQTextMessage.cpp">
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ActiveMQTopic.cpp">
+            <BuildOrder>26</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\BrokerError.cpp">
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\BrokerId.cpp">
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\BrokerInfo.cpp">
+            <BuildOrder>29</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConnectionControl.cpp">
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConnectionError.cpp">
+            <BuildOrder>31</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConnectionId.cpp">
+            <BuildOrder>32</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConnectionInfo.cpp">
+            <BuildOrder>33</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConsumerControl.cpp">
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConsumerId.cpp">
+            <BuildOrder>35</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ConsumerInfo.cpp">
+            <BuildOrder>36</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ControlCommand.cpp">
+            <BuildOrder>37</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\DataArrayResponse.cpp">
+            <BuildOrder>38</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\DataResponse.cpp">
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\DestinationInfo.cpp">
+            <BuildOrder>40</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\DiscoveryEvent.cpp">
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ExceptionResponse.cpp">
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\FlushCommand.cpp">
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\IntegerResponse.cpp">
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\JournalQueueAck.cpp">
+            <BuildOrder>45</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\JournalTopicAck.cpp">
+            <BuildOrder>46</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\JournalTrace.cpp">
+            <BuildOrder>47</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\JournalTransaction.cpp">
+            <BuildOrder>48</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\KeepAliveInfo.cpp">
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\LastPartialCommand.cpp">
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\LocalTransactionId.cpp">
+            <BuildOrder>51</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\Message.cpp">
+            <BuildOrder>52</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\MessageAck.cpp">
+            <BuildOrder>53</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\MessageDispatch.cpp">
+            <BuildOrder>54</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\MessageDispatchNotification.cpp">
+            <BuildOrder>55</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\MessageId.cpp">
+            <BuildOrder>56</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\MessagePull.cpp">
+            <BuildOrder>57</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\NetworkBridgeFilter.cpp">
+            <BuildOrder>58</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\PartialCommand.cpp">
+            <BuildOrder>59</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ProducerAck.cpp">
+            <BuildOrder>60</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ProducerId.cpp">
+            <BuildOrder>61</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ProducerInfo.cpp">
+            <BuildOrder>62</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\RemoveInfo.cpp">
+            <BuildOrder>63</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\RemoveSubscriptionInfo.cpp">
+            <BuildOrder>64</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ReplayCommand.cpp">
+            <BuildOrder>65</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\Response.cpp">
+            <BuildOrder>66</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\SessionId.cpp">
+            <BuildOrder>67</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\SessionInfo.cpp">
+            <BuildOrder>68</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\ShutdownInfo.cpp">
+            <BuildOrder>69</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\SubscriptionInfo.cpp">
+            <BuildOrder>70</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\TransactionId.cpp">
+            <BuildOrder>71</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\TransactionInfo.cpp">
+            <BuildOrder>72</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\WireFormatInfo.cpp">
+            <BuildOrder>73</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\commands\XATransactionId.cpp">
+            <BuildOrder>74</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQAckHandler.cpp">
+            <BuildOrder>75</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQConnection.cpp">
+            <BuildOrder>76</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQConnectionFactory.cpp">
+            <BuildOrder>77</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQConnectionMetaData.cpp">
+            <BuildOrder>78</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQConstants.cpp">
+            <BuildOrder>79</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQConsumer.cpp">
+            <BuildOrder>80</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQDestinationEvent.cpp">
+            <BuildOrder>81</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQDestinationSource.cpp">
+            <BuildOrder>82</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQMessageAudit.cpp">
+            <BuildOrder>83</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQProducer.cpp">
+            <BuildOrder>84</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQQueueBrowser.cpp">
+            <BuildOrder>85</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQSession.cpp">
+            <BuildOrder>86</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQSessionExecutor.cpp">
+            <BuildOrder>91</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQTransactionContext.cpp">
+            <BuildOrder>88</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQXAConnection.cpp">
+            <BuildOrder>89</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQXAConnectionFactory.cpp">
+            <BuildOrder>90</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ActiveMQXASession.cpp">
+            <BuildOrder>91</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\AdvisoryConsumer.cpp">
+            <BuildOrder>92</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\ConnectionAudit.cpp">
+            <BuildOrder>93</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\DispatchData.cpp">
+            <BuildOrder>94</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\Dispatcher.cpp">
+            <BuildOrder>95</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\FifoMessageDispatchChannel.cpp">
+            <BuildOrder>96</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\kernels\ActiveMQConsumerKernel.cpp">
+            <BuildOrder>102</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\kernels\ActiveMQProducerKernel.cpp">
+            <BuildOrder>103</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\kernels\ActiveMQSessionKernel.cpp">
+            <BuildOrder>104</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\kernels\ActiveMQXASessionKernel.cpp">
+            <BuildOrder>105</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\MessageDispatchChannel.cpp">
+            <BuildOrder>97</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\policies\DefaultPrefetchPolicy.cpp">
+            <BuildOrder>106</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\policies\DefaultRedeliveryPolicy.cpp">
+            <BuildOrder>107</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\PrefetchPolicy.cpp">
+            <BuildOrder>98</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\RedeliveryPolicy.cpp">
+            <BuildOrder>99</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\SimplePriorityMessageDispatchChannel.cpp">
+            <BuildOrder>100</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\core\Synchronization.cpp">
+            <BuildOrder>101</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\exceptions\ActiveMQException.cpp">
+            <BuildOrder>108</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\exceptions\BrokerException.cpp">
+            <BuildOrder>109</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\exceptions\ConnectionFailedException.cpp">
+            <BuildOrder>110</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\io\LoggingInputStream.cpp">
+            <BuildOrder>111</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\io\LoggingOutputStream.cpp">
+            <BuildOrder>112</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\library\ActiveMQCPP.cpp">
+            <BuildOrder>113</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\CommandVisitor.cpp">
+            <BuildOrder>114</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\CommandVisitorAdapter.cpp">
+            <BuildOrder>115</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\ConnectionState.cpp">
+            <BuildOrder>116</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\ConnectionStateTracker.cpp">
+            <BuildOrder>117</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\ConsumerState.cpp">
+            <BuildOrder>118</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\ProducerState.cpp">
+            <BuildOrder>119</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\SessionState.cpp">
+            <BuildOrder>120</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\Tracked.cpp">
+            <BuildOrder>121</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\state\TransactionState.cpp">
+            <BuildOrder>122</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\CompositeTask.cpp">
+            <BuildOrder>123</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\CompositeTaskRunner.cpp">
+            <BuildOrder>124</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\DedicatedTaskRunner.cpp">
+            <BuildOrder>125</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\Scheduler.cpp">
+            <BuildOrder>126</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\SchedulerTimerTask.cpp">
+            <BuildOrder>127</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\Task.cpp">
+            <BuildOrder>128</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\threads\TaskRunner.cpp">
+            <BuildOrder>129</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\AbstractTransportFactory.cpp">
+            <BuildOrder>130</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\CompositeTransport.cpp">
+            <BuildOrder>131</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\correlator\ResponseCorrelator.cpp">
+            <BuildOrder>139</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\DefaultTransportListener.cpp">
+            <BuildOrder>132</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\BackupTransport.cpp">
+            <BuildOrder>140</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\BackupTransportPool.cpp">
+            <BuildOrder>141</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\CloseTransportsTask.cpp">
+            <BuildOrder>142</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\FailoverTransport.cpp">
+            <BuildOrder>143</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\FailoverTransportFactory.cpp">
+            <BuildOrder>144</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\FailoverTransportListener.cpp">
+            <BuildOrder>145</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\failover\URIPool.cpp">
+            <BuildOrder>146</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\FutureResponse.cpp">
+            <BuildOrder>133</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\inactivity\InactivityMonitor.cpp">
+            <BuildOrder>147</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\inactivity\ReadChecker.cpp">
+            <BuildOrder>148</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\inactivity\WriteChecker.cpp">
+            <BuildOrder>149</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\IOTransport.cpp">
+            <BuildOrder>134</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\logging\LoggingTransport.cpp">
+            <BuildOrder>150</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\mock\InternalCommandListener.cpp">
+            <BuildOrder>151</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\mock\MockTransport.cpp">
+            <BuildOrder>152</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\mock\MockTransportFactory.cpp">
+            <BuildOrder>153</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\mock\ResponseBuilder.cpp">
+            <BuildOrder>154</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\ResponseCallback.cpp">
+            <BuildOrder>135</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\tcp\SslTransport.cpp">
+            <BuildOrder>155</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\tcp\SslTransportFactory.cpp">
+            <BuildOrder>156</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\tcp\TcpTransport.cpp">
+            <BuildOrder>157</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\tcp\TcpTransportFactory.cpp">
+            <BuildOrder>158</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\Transport.cpp">
+            <BuildOrder>136</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\TransportFilter.cpp">
+            <BuildOrder>137</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\transport\TransportRegistry.cpp">
+            <BuildOrder>138</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\ActiveMQMessageTransformation.cpp">
+            <BuildOrder>159</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\ActiveMQProperties.cpp">
+            <BuildOrder>160</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\AdvisorySupport.cpp">
+            <BuildOrder>161</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\CMSExceptionSupport.cpp">
+            <BuildOrder>162</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\CompositeData.cpp">
+            <BuildOrder>163</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\IdGenerator.cpp">
+            <BuildOrder>164</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\LongSequenceGenerator.cpp">
+            <BuildOrder>165</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\MarshallingSupport.cpp">
+            <BuildOrder>166</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\MemoryUsage.cpp">
+            <BuildOrder>167</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\PrimitiveList.cpp">
+            <BuildOrder>168</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\PrimitiveMap.cpp">
+            <BuildOrder>169</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\PrimitiveValueConverter.cpp">
+            <BuildOrder>170</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\PrimitiveValueNode.cpp">
+            <BuildOrder>171</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\Service.cpp">
+            <BuildOrder>172</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\ServiceListener.cpp">
+            <BuildOrder>173</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\ServiceStopper.cpp">
+            <BuildOrder>174</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\ServiceSupport.cpp">
+            <BuildOrder>175</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\Suspendable.cpp">
+            <BuildOrder>176</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\URISupport.cpp">
+            <BuildOrder>177</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\util\Usage.cpp">
+            <BuildOrder>178</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\MarshalAware.cpp">
+            <BuildOrder>179</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\BaseDataStreamMarshaller.cpp">
+            <BuildOrder>188</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\DataStreamMarshaller.cpp">
+            <BuildOrder>189</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQBlobMessageMarshaller.cpp">
+            <BuildOrder>191</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQBytesMessageMarshaller.cpp">
+            <BuildOrder>192</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQDestinationMarshaller.cpp">
+            <BuildOrder>193</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQMapMessageMarshaller.cpp">
+            <BuildOrder>194</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQMessageMarshaller.cpp">
+            <BuildOrder>195</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQObjectMessageMarshaller.cpp">
+            <BuildOrder>196</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQQueueMarshaller.cpp">
+            <BuildOrder>197</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQStreamMessageMarshaller.cpp">
+            <BuildOrder>198</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQTempDestinationMarshaller.cpp">
+            <BuildOrder>199</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQTempQueueMarshaller.cpp">
+            <BuildOrder>200</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQTempTopicMarshaller.cpp">
+            <BuildOrder>201</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQTextMessageMarshaller.cpp">
+            <BuildOrder>202</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ActiveMQTopicMarshaller.cpp">
+            <BuildOrder>203</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\BaseCommandMarshaller.cpp">
+            <BuildOrder>204</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\BrokerIdMarshaller.cpp">
+            <BuildOrder>205</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\BrokerInfoMarshaller.cpp">
+            <BuildOrder>206</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConnectionControlMarshaller.cpp">
+            <BuildOrder>207</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConnectionErrorMarshaller.cpp">
+            <BuildOrder>208</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConnectionIdMarshaller.cpp">
+            <BuildOrder>209</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConnectionInfoMarshaller.cpp">
+            <BuildOrder>210</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConsumerControlMarshaller.cpp">
+            <BuildOrder>211</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConsumerIdMarshaller.cpp">
+            <BuildOrder>212</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ConsumerInfoMarshaller.cpp">
+            <BuildOrder>213</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ControlCommandMarshaller.cpp">
+            <BuildOrder>214</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\DataArrayResponseMarshaller.cpp">
+            <BuildOrder>215</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\DataResponseMarshaller.cpp">
+            <BuildOrder>216</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\DestinationInfoMarshaller.cpp">
+            <BuildOrder>217</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\DiscoveryEventMarshaller.cpp">
+            <BuildOrder>218</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ExceptionResponseMarshaller.cpp">
+            <BuildOrder>219</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\FlushCommandMarshaller.cpp">
+            <BuildOrder>220</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\IntegerResponseMarshaller.cpp">
+            <BuildOrder>221</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\JournalQueueAckMarshaller.cpp">
+            <BuildOrder>222</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\JournalTopicAckMarshaller.cpp">
+            <BuildOrder>223</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\JournalTraceMarshaller.cpp">
+            <BuildOrder>224</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\JournalTransactionMarshaller.cpp">
+            <BuildOrder>225</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\KeepAliveInfoMarshaller.cpp">
+            <BuildOrder>226</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\LastPartialCommandMarshaller.cpp">
+            <BuildOrder>227</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\LocalTransactionIdMarshaller.cpp">
+            <BuildOrder>228</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MarshallerFactory.cpp">
+            <BuildOrder>229</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessageAckMarshaller.cpp">
+            <BuildOrder>230</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessageDispatchMarshaller.cpp">
+            <BuildOrder>231</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessageDispatchNotificationMarshaller.cpp">
+            <BuildOrder>232</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessageIdMarshaller.cpp">
+            <BuildOrder>233</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessageMarshaller.cpp">
+            <BuildOrder>234</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\MessagePullMarshaller.cpp">
+            <BuildOrder>235</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\NetworkBridgeFilterMarshaller.cpp">
+            <BuildOrder>236</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\PartialCommandMarshaller.cpp">
+            <BuildOrder>237</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ProducerAckMarshaller.cpp">
+            <BuildOrder>238</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ProducerIdMarshaller.cpp">
+            <BuildOrder>239</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ProducerInfoMarshaller.cpp">
+            <BuildOrder>240</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\RemoveInfoMarshaller.cpp">
+            <BuildOrder>241</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\RemoveSubscriptionInfoMarshaller.cpp">
+            <BuildOrder>242</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ReplayCommandMarshaller.cpp">
+            <BuildOrder>243</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ResponseMarshaller.cpp">
+            <BuildOrder>244</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\SessionIdMarshaller.cpp">
+            <BuildOrder>245</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\SessionInfoMarshaller.cpp">
+            <BuildOrder>246</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\ShutdownInfoMarshaller.cpp">
+            <BuildOrder>247</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\SubscriptionInfoMarshaller.cpp">
+            <BuildOrder>248</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\TransactionIdMarshaller.cpp">
+            <BuildOrder>249</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\TransactionInfoMarshaller.cpp">
+            <BuildOrder>250</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\WireFormatInfoMarshaller.cpp">
+            <BuildOrder>251</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\generated\XATransactionIdMarshaller.cpp">
+            <BuildOrder>252</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\marshal\PrimitiveTypesMarshaller.cpp">
+            <BuildOrder>190</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\OpenWireFormat.cpp">
+            <BuildOrder>190</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\OpenWireFormatFactory.cpp">
+            <BuildOrder>185</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\OpenWireFormatNegotiator.cpp">
+            <BuildOrder>186</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\OpenWireResponseBuilder.cpp">
+            <BuildOrder>187</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\utils\BooleanStream.cpp">
+            <BuildOrder>253</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\utils\HexTable.cpp">
+            <BuildOrder>254</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\openwire\utils\MessagePropertyInterceptor.cpp">
+            <BuildOrder>255</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\stomp\StompCommandConstants.cpp">
+            <BuildOrder>256</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\stomp\StompFrame.cpp">
+            <BuildOrder>257</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\stomp\StompHelper.cpp">
+            <BuildOrder>258</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\stomp\StompWireFormat.cpp">
+            <BuildOrder>259</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\stomp\StompWireFormatFactory.cpp">
+            <BuildOrder>260</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\WireFormat.cpp">
+            <BuildOrder>180</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\WireFormatFactory.cpp">
+            <BuildOrder>181</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\WireFormatNegotiator.cpp">
+            <BuildOrder>182</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\activemq\wireformat\WireFormatRegistry.cpp">
+            <BuildOrder>183</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\AsyncCallback.cpp">
+            <BuildOrder>261</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\BytesMessage.cpp">
+            <BuildOrder>262</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Closeable.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>263</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\CMSException.cpp">
+            <BuildOrder>264</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\CMSProperties.cpp">
+            <BuildOrder>265</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\CMSSecurityException.cpp">
+            <BuildOrder>266</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Connection.cpp">
+            <BuildOrder>267</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\ConnectionFactory.cpp">
+            <BuildOrder>268</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\ConnectionMetaData.cpp">
+            <BuildOrder>269</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\DeliveryMode.cpp">
+            <BuildOrder>270</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Destination.cpp">
+            <BuildOrder>271</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\DestinationEvent.cpp">
+            <BuildOrder>272</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\DestinationListener.cpp">
+            <BuildOrder>273</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\DestinationSource.cpp">
+            <BuildOrder>274</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\EnhancedConnection.cpp">
+            <BuildOrder>275</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\ExceptionListener.cpp">
+            <BuildOrder>276</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\IllegalStateException.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>277</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\InvalidClientIdException.cpp">
+            <BuildOrder>278</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\InvalidDestinationException.cpp">
+            <BuildOrder>279</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\InvalidSelectorException.cpp">
+            <BuildOrder>280</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MapMessage.cpp">
+            <BuildOrder>280</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Message.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>281</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageAvailableListener.cpp">
+            <BuildOrder>282</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageConsumer.cpp">
+            <BuildOrder>283</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageEnumeration.cpp">
+            <BuildOrder>284</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageEOFException.cpp">
+            <BuildOrder>285</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageFormatException.cpp">
+            <BuildOrder>286</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageListener.cpp">
+            <BuildOrder>287</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageNotReadableException.cpp">
+            <BuildOrder>288</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageNotWriteableException.cpp">
+            <BuildOrder>289</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageProducer.cpp">
+            <BuildOrder>290</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\MessageTransformer.cpp">
+            <BuildOrder>291</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\ObjectMessage.cpp">
+            <BuildOrder>292</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Queue.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>293</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\QueueBrowser.cpp">
+            <BuildOrder>294</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\ResourceAllocationException.cpp">
+            <BuildOrder>295</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Session.cpp">
+            <BuildOrder>296</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Startable.cpp">
+            <BuildOrder>297</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Stoppable.cpp">
+            <BuildOrder>298</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\StreamMessage.cpp">
+            <BuildOrder>299</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\TemporaryQueue.cpp">
+            <BuildOrder>300</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\TemporaryTopic.cpp">
+            <BuildOrder>301</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\TextMessage.cpp">
+            <BuildOrder>302</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Topic.cpp">
+            <BuildOrder>303</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\TransactionInProgressException.cpp">
+            <BuildOrder>304</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\TransactionRolledBackException.cpp">
+            <BuildOrder>305</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\UnsupportedOperationException.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>306</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\XAConnection.cpp">
+            <BuildOrder>307</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\XAConnectionFactory.cpp">
+            <BuildOrder>308</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\XAException.cpp">
+            <BuildOrder>309</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\XAResource.cpp">
+            <BuildOrder>310</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\XASession.cpp">
+            <BuildOrder>311</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\cms\Xid.cpp">
+            <BuildOrder>312</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\AprPool.cpp">
+            <BuildOrder>313</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\DecafRuntime.cpp">
+            <BuildOrder>314</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\io\StandardErrorOutputStream.cpp">
+            <BuildOrder>315</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\io\StandardInputStream.cpp">
+            <BuildOrder>316</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\io\StandardOutputStream.cpp">
+            <BuildOrder>317</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\DefaultServerSocketFactory.cpp">
+            <BuildOrder>318</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\DefaultSocketFactory.cpp">
+            <BuildOrder>319</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\file\FileHandler.cpp">
+            <BuildOrder>328</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\https\HttpsHandler.cpp">
+            <BuildOrder>330</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\http\HttpHandler.cpp">
+            <BuildOrder>329</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\Network.cpp">
+            <BuildOrder>320</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\SocketFileDescriptor.cpp">
+            <BuildOrder>321</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\DefaultSSLContext.cpp">
+            <BuildOrder>331</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\DefaultSSLServerSocketFactory.cpp">
+            <BuildOrder>332</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\DefaultSSLSocketFactory.cpp">
+            <BuildOrder>333</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLContextSpi.cpp">
+            <BuildOrder>334</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLParameters.cpp">
+            <BuildOrder>335</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLServerSocket.cpp">
+            <BuildOrder>336</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLServerSocketFactory.cpp">
+            <BuildOrder>337</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLSocket.cpp">
+            <BuildOrder>338</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLSocketException.cpp">
+            <BuildOrder>339</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLSocketFactory.cpp">
+            <BuildOrder>340</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLSocketInputStream.cpp">
+            <BuildOrder>341</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\ssl\openssl\OpenSSLSocketOutputStream.cpp">
+            <BuildOrder>342</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\tcp\TcpSocket.cpp">
+            <BuildOrder>343</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\tcp\TcpSocketInputStream.cpp">
+            <BuildOrder>344</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\tcp\TcpSocketOutputStream.cpp">
+            <BuildOrder>345</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URIEncoderDecoder.cpp">
+            <BuildOrder>322</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URIHelper.cpp">
+            <BuildOrder>323</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URIType.cpp">
+            <BuildOrder>324</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URLStreamHandlerManager.cpp">
+            <BuildOrder>325</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URLType.cpp">
+            <BuildOrder>326</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\net\URLUtils.cpp">
+            <BuildOrder>327</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\BufferFactory.cpp">
+            <BuildOrder>346</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\ByteArrayBuffer.cpp">
+            <BuildOrder>347</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\CharArrayBuffer.cpp">
+            <BuildOrder>348</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\DoubleArrayBuffer.cpp">
+            <BuildOrder>349</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\FloatArrayBuffer.cpp">
+            <BuildOrder>350</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\IntArrayBuffer.cpp">
+            <BuildOrder>351</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\LongArrayBuffer.cpp">
+            <BuildOrder>352</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\nio\ShortArrayBuffer.cpp">
+            <BuildOrder>353</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\Engine.cpp">
+            <BuildOrder>354</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\crypto\MD4MessageDigestSpi.cpp">
+            <BuildOrder>360</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\crypto\MD5MessageDigestSpi.cpp">
+            <BuildOrder>361</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\crypto\SHA1MessageDigestSpi.cpp">
+            <BuildOrder>362</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\DefaultMessageDigestProviderService.cpp">
+            <BuildOrder>357</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\DefaultProvider.cpp">
+            <BuildOrder>358</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\provider\DefaultSecureRandomProviderService.cpp">
+            <BuildOrder>359</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\SecurityRuntime.cpp">
+            <BuildOrder>355</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\ServiceRegistry.cpp">
+            <BuildOrder>356</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\security\windows\SecureRandomImpl.cpp">
+            <BuildOrder>364</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\ByteArrayAdapter.cpp">
+            <BuildOrder>364</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\ExecutorsSupport.cpp">
+            <BuildOrder>371</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\SynchronizableImpl.cpp">
+            <BuildOrder>372</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\Threading.cpp">
+            <BuildOrder>373</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\ThreadLocalImpl.cpp">
+            <BuildOrder>374</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\windows\Atomics.cpp">
+            <BuildOrder>375</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\concurrent\windows\PlatformThread.cpp">
+            <BuildOrder>376</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\GenericResource.cpp">
+            <BuildOrder>365</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\HexStringParser.cpp">
+            <BuildOrder>366</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\Resource.cpp">
+            <BuildOrder>367</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\ResourceLifecycleManager.cpp">
+            <BuildOrder>368</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\StringUtils.cpp">
+            <BuildOrder>369</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\TimerTaskHeap.cpp">
+            <BuildOrder>370</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\adler32.c">
+            <BuildOrder>377</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\crc32.c">
+            <BuildOrder>378</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\deflate.c">
+            <BuildOrder>379</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\gzclose.c">
+            <BuildOrder>380</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\gzlib.c">
+            <BuildOrder>381</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\gzread.c">
+            <BuildOrder>382</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\gzwrite.c">
+            <BuildOrder>383</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\infback.c">
+            <BuildOrder>384</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\inffast.c">
+            <BuildOrder>385</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\inflate.c">
+            <BuildOrder>386</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\inftrees.c">
+            <BuildOrder>387</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\trees.c">
+            <BuildOrder>388</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\uncompr.c">
+            <BuildOrder>389</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\internal\util\zip\zutil.c">
+            <BuildOrder>390</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\BlockingByteArrayInputStream.cpp">
+            <BuildOrder>391</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\BufferedInputStream.cpp">
+            <BuildOrder>392</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\BufferedOutputStream.cpp">
+            <BuildOrder>393</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\ByteArrayInputStream.cpp">
+            <BuildOrder>394</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\ByteArrayOutputStream.cpp">
+            <BuildOrder>395</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\Closeable.cpp">
+            <BuildOrder>396</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\DataInput.cpp">
+            <BuildOrder>397</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\DataInputStream.cpp">
+            <BuildOrder>398</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\DataOutput.cpp">
+            <BuildOrder>399</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\DataOutputStream.cpp">
+            <BuildOrder>400</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\EOFException.cpp">
+            <BuildOrder>401</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\FileDescriptor.cpp">
+            <BuildOrder>402</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\FilterInputStream.cpp">
+            <BuildOrder>403</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\FilterOutputStream.cpp">
+            <BuildOrder>404</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\Flushable.cpp">
+            <BuildOrder>405</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\InputStream.cpp">
+            <BuildOrder>406</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\InputStreamReader.cpp">
+            <BuildOrder>407</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\InterruptedIOException.cpp">
+            <BuildOrder>408</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\IOException.cpp">
+            <BuildOrder>409</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\OutputStream.cpp">
+            <BuildOrder>410</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\OutputStreamWriter.cpp">
+            <BuildOrder>411</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\PushbackInputStream.cpp">
+            <BuildOrder>412</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\Reader.cpp">
+            <BuildOrder>413</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\UnsupportedEncodingException.cpp">
+            <BuildOrder>414</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\UTFDataFormatException.cpp">
+            <BuildOrder>415</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\io\Writer.cpp">
+            <BuildOrder>416</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\AbstractStringBuilder.cpp">
+            <BuildOrder>625</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Appendable.cpp">
+            <BuildOrder>626</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Boolean.cpp">
+            <BuildOrder>627</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Byte.cpp">
+            <BuildOrder>628</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Character.cpp">
+            <BuildOrder>629</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\CharSequence.cpp">
+            <BuildOrder>630</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Comparable.cpp">
+            <BuildOrder>631</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Double.cpp">
+            <BuildOrder>632</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Exception.cpp">
+            <BuildOrder>633</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\ArrayIndexOutOfBoundsException.cpp">
+            <BuildOrder>605</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\ClassCastException.cpp">
+            <BuildOrder>606</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\CloneNotSupportedException.cpp">
+            <BuildOrder>607</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\IllegalArgumentException.cpp">
+            <BuildOrder>608</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\IllegalMonitorStateException.cpp">
+            <BuildOrder>609</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\IllegalStateException.cpp">
+            <BuildOrder>610</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\IllegalThreadStateException.cpp">
+            <BuildOrder>611</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\IndexOutOfBoundsException.cpp">
+            <BuildOrder>612</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\InterruptedException.cpp">
+            <BuildOrder>613</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\InvalidStateException.cpp">
+            <BuildOrder>614</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\NegativeArraySizeException.cpp">
+            <BuildOrder>615</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\NullPointerException.cpp">
+            <BuildOrder>616</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\NumberFormatException.cpp">
+            <BuildOrder>617</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\OutOfMemoryError.cpp">
+            <BuildOrder>618</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\RuntimeException.cpp">
+            <BuildOrder>619</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\SecurityException.cpp">
+            <BuildOrder>620</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\StringIndexOutOfBoundsException.cpp">
+            <BuildOrder>621</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\exceptions\UnsupportedOperationException.cpp">
+            <BuildOrder>622</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Float.cpp">
+            <BuildOrder>634</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Integer.cpp">
+            <BuildOrder>635</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Iterable.cpp">
+            <BuildOrder>636</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Long.cpp">
+            <BuildOrder>637</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Math.cpp">
+            <BuildOrder>638</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Number.cpp">
+            <BuildOrder>639</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Readable.cpp">
+            <BuildOrder>640</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Runnable.cpp">
+            <BuildOrder>641</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Runtime.cpp">
+            <BuildOrder>642</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Short.cpp">
+            <BuildOrder>643</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\String.cpp">
+            <BuildOrder>644</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\StringBuffer.cpp">
+            <BuildOrder>645</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\StringBuilder.cpp">
+            <BuildOrder>646</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\System.cpp">
+            <BuildOrder>647</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Thread.cpp">
+            <BuildOrder>648</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\ThreadGroup.cpp">
+            <BuildOrder>649</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\ThreadLocal.cpp">
+            <BuildOrder>650</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Throwable.cpp">
+            <BuildOrder>651</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\lang\Types.cpp">
+            <BuildOrder>679</BuildOrder>
+        </CppCompile>
+        <None Include="..\src\main\decaf\lang\Types.h">
+            <BuildOrder>680</BuildOrder>
+        </None>
+        <CppCompile Include="..\src\main\decaf\net\BindException.cpp">
+            <BuildOrder>417</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ConnectException.cpp">
+            <BuildOrder>418</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ContentHandlerFactory.cpp">
+            <BuildOrder>419</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\DatagramPacket.cpp">
+            <BuildOrder>420</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\FileNameMap.cpp">
+            <BuildOrder>421</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\HttpRetryException.cpp">
+            <BuildOrder>422</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\HttpURLConnection.cpp">
+            <BuildOrder>423</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\Inet4Address.cpp">
+            <BuildOrder>424</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\Inet6Address.cpp">
+            <BuildOrder>425</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\InetAddress.cpp">
+            <BuildOrder>426</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\InetSocketAddress.cpp">
+            <BuildOrder>427</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\MalformedURLException.cpp">
+            <BuildOrder>428</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\NoRouteToHostException.cpp">
+            <BuildOrder>429</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\PortUnreachableException.cpp">
+            <BuildOrder>430</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ProtocolException.cpp">
+            <BuildOrder>431</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\Proxy.cpp">
+            <BuildOrder>432</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ServerSocket.cpp">
+            <BuildOrder>433</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ServerSocketFactory.cpp">
+            <BuildOrder>434</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\Socket.cpp">
+            <BuildOrder>435</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketAddress.cpp">
+            <BuildOrder>436</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketError.cpp">
+            <BuildOrder>437</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketException.cpp">
+            <BuildOrder>438</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketFactory.cpp">
+            <BuildOrder>439</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketImpl.cpp">
+            <BuildOrder>440</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketImplFactory.cpp">
+            <BuildOrder>441</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketOptions.cpp">
+            <BuildOrder>442</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\SocketTimeoutException.cpp">
+            <BuildOrder>443</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLContext.cpp">
+            <BuildOrder>653</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLContextSpi.cpp">
+            <BuildOrder>654</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLParameters.cpp">
+            <BuildOrder>655</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLServerSocket.cpp">
+            <BuildOrder>656</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLServerSocketFactory.cpp">
+            <BuildOrder>657</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLSocket.cpp">
+            <BuildOrder>658</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\ssl\SSLSocketFactory.cpp">
+            <BuildOrder>659</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\UnknownHostException.cpp">
+            <BuildOrder>444</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\UnknownServiceException.cpp">
+            <BuildOrder>445</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URI.cpp">
+            <BuildOrder>446</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URISyntaxException.cpp">
+            <BuildOrder>447</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URL.cpp">
+            <BuildOrder>448</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URLConnection.cpp">
+            <BuildOrder>449</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URLDecoder.cpp">
+            <BuildOrder>450</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URLEncoder.cpp">
+            <BuildOrder>451</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URLStreamHandler.cpp">
+            <BuildOrder>452</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\net\URLStreamHandlerFactory.cpp">
+            <BuildOrder>453</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\Buffer.cpp">
+            <BuildOrder>454</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\BufferOverflowException.cpp">
+            <BuildOrder>455</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\BufferUnderflowException.cpp">
+            <BuildOrder>456</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\ByteBuffer.cpp">
+            <BuildOrder>457</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\CharBuffer.cpp">
+            <BuildOrder>458</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\DoubleBuffer.cpp">
+            <BuildOrder>459</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\FloatBuffer.cpp">
+            <BuildOrder>460</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\IntBuffer.cpp">
+            <BuildOrder>461</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\InvalidMarkException.cpp">
+            <BuildOrder>462</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\LongBuffer.cpp">
+            <BuildOrder>463</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\ReadOnlyBufferException.cpp">
+            <BuildOrder>464</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\nio\ShortBuffer.cpp">
+            <BuildOrder>465</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\auth\x500\X500Principal.cpp">
+            <BuildOrder>486</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\Certificate.cpp">
+            <BuildOrder>487</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\CertificateEncodingException.cpp">
+            <BuildOrder>488</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\CertificateException.cpp">
+            <BuildOrder>489</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\CertificateExpiredException.cpp">
+            <BuildOrder>490</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\CertificateNotYetValidException.cpp">
+            <BuildOrder>491</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\CertificateParsingException.cpp">
+            <BuildOrder>492</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\cert\X509Certificate.cpp">
+            <BuildOrder>493</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\DigestException.cpp">
+            <BuildOrder>466</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\GeneralSecurityException.cpp">
+            <BuildOrder>467</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\InvalidKeyException.cpp">
+            <BuildOrder>468</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\Key.cpp">
+            <BuildOrder>469</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\KeyException.cpp">
+            <BuildOrder>470</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\KeyManagementException.cpp">
+            <BuildOrder>471</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\MessageDigest.cpp">
+            <BuildOrder>472</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\MessageDigestSpi.cpp">
+            <BuildOrder>473</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\NoSuchAlgorithmException.cpp">
+            <BuildOrder>474</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\NoSuchProviderException.cpp">
+            <BuildOrder>475</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\Principal.cpp">
+            <BuildOrder>476</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\Provider.cpp">
+            <BuildOrder>477</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\ProviderException.cpp">
+            <BuildOrder>478</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\ProviderService.cpp">
+            <BuildOrder>479</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\PublicKey.cpp">
+            <BuildOrder>480</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\SecureRandom.cpp">
+            <BuildOrder>481</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\SecureRandomSpi.cpp">
+            <BuildOrder>482</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\Security.cpp">
+            <BuildOrder>483</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\SecuritySpi.cpp">
+            <BuildOrder>484</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\security\SignatureException.cpp">
+            <BuildOrder>485</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractCollection.cpp">
+            <BuildOrder>494</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractList.cpp">
+            <BuildOrder>495</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractMap.cpp">
+            <BuildOrder>496</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractQueue.cpp">
+            <BuildOrder>497</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractSequentialList.cpp">
+            <BuildOrder>498</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\AbstractSet.cpp">
+            <BuildOrder>499</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\ArrayList.cpp">
+            <BuildOrder>500</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Arrays.cpp">
+            <BuildOrder>501</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\BitSet.cpp">
+            <BuildOrder>502</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Collection.cpp">
+            <BuildOrder>503</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Collections.cpp">
+            <BuildOrder>504</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Comparator.cpp">
+            <BuildOrder>505</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\comparators\Equals.cpp">
+            <BuildOrder>535</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\comparators\Less.cpp">
+            <BuildOrder>536</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\ConcurrentModificationException.cpp">
+            <BuildOrder>506</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\AbstractExecutorService.cpp">
+            <BuildOrder>537</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\atomic\AtomicBoolean.cpp">
+            <BuildOrder>593</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\atomic\AtomicInteger.cpp">
+            <BuildOrder>594</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\atomic\AtomicRefCounter.cpp">
+            <BuildOrder>595</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\atomic\AtomicReference.cpp">
+            <BuildOrder>596</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\BlockingQueue.cpp">
+            <BuildOrder>538</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\BrokenBarrierException.cpp">
+            <BuildOrder>539</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Callable.cpp">
+            <BuildOrder>540</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\CancellationException.cpp">
+            <BuildOrder>541</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ConcurrentHashMap.cpp">
+            <BuildOrder>542</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ConcurrentMap.cpp">
+            <BuildOrder>543</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ConcurrentStlMap.cpp">
+            <BuildOrder>544</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\CopyOnWriteArrayList.cpp">
+            <BuildOrder>545</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\CopyOnWriteArraySet.cpp">
+            <BuildOrder>546</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\CountDownLatch.cpp">
+            <BuildOrder>547</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Delayed.cpp">
+            <BuildOrder>548</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ExecutionException.cpp">
+            <BuildOrder>549</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Executor.cpp">
+            <BuildOrder>550</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Executors.cpp">
+            <BuildOrder>551</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ExecutorService.cpp">
+            <BuildOrder>552</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Future.cpp">
+            <BuildOrder>553</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\FutureTask.cpp">
+            <BuildOrder>554</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\LinkedBlockingQueue.cpp">
+            <BuildOrder>555</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Lock.cpp">
+            <BuildOrder>556</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\AbstractOwnableSynchronizer.cpp">
+            <BuildOrder>597</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\AbstractQueuedSynchronizer.cpp">
+            <BuildOrder>598</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\Condition.cpp">
+            <BuildOrder>599</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\Lock.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>600</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\LockSupport.cpp">
+            <BuildOrder>601</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\ReadWriteLock.cpp">
+            <BuildOrder>602</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\ReentrantLock.cpp">
+            <BuildOrder>603</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\locks\ReentrantReadWriteLock.cpp">
+            <BuildOrder>604</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Mutex.cpp">
+            <BuildOrder>557</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\RejectedExecutionException.cpp">
+            <BuildOrder>558</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\RejectedExecutionHandler.cpp">
+            <BuildOrder>559</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\RunnableFuture.cpp">
+            <BuildOrder>560</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Semaphore.cpp">
+            <BuildOrder>561</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\Synchronizable.cpp">
+            <BuildOrder>562</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\SynchronousQueue.cpp">
+            <BuildOrder>563</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ThreadFactory.cpp">
+            <BuildOrder>564</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\ThreadPoolExecutor.cpp">
+            <BuildOrder>565</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\TimeoutException.cpp">
+            <BuildOrder>566</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\concurrent\TimeUnit.cpp">
+            <BuildOrder>567</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Date.cpp">
+            <BuildOrder>507</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Deque.cpp">
+            <BuildOrder>508</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\HashCode.cpp">
+            <BuildOrder>509</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\HashMap.cpp">
+            <BuildOrder>510</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\HashSet.cpp">
+            <BuildOrder>511</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Iterator.cpp">
+            <BuildOrder>512</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\LinkedHashMap.cpp">
+            <BuildOrder>513</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\LinkedHashSet.cpp">
+            <BuildOrder>514</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\LinkedList.cpp">
+            <BuildOrder>515</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\List.cpp">
+            <BuildOrder>516</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\ListIterator.cpp">
+            <BuildOrder>517</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\ConsoleHandler.cpp">
+            <BuildOrder>568</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\ErrorManager.cpp">
+            <BuildOrder>569</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\Formatter.cpp">
+            <BuildOrder>570</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\Handler.cpp">
+            <BuildOrder>571</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\Level.cpp">
+            <BuildOrder>572</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\Logger.cpp">
+            <BuildOrder>573</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\LoggerHierarchy.cpp">
+            <BuildOrder>574</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\LogManager.cpp">
+            <BuildOrder>575</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\LogRecord.cpp">
+            <BuildOrder>576</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\LogWriter.cpp">
+            <BuildOrder>577</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\SimpleFormatter.cpp">
+            <BuildOrder>578</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\SimpleLogger.cpp">
+            <BuildOrder>579</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\StreamHandler.cpp">
+            <BuildOrder>580</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\logging\XMLFormatter.cpp">
+            <BuildOrder>581</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\LRUCache.cpp">
+            <BuildOrder>518</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Map.cpp">
+            <BuildOrder>519</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\MapEntry.cpp">
+            <BuildOrder>520</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\NoSuchElementException.cpp">
+            <BuildOrder>521</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\PriorityQueue.cpp">
+            <BuildOrder>522</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Properties.cpp">
+            <BuildOrder>523</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Queue.cpp">
+            <BuildOrder>524</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Random.cpp">
+            <BuildOrder>525</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Set.cpp">
+            <BuildOrder>526</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\StlList.cpp">
+            <BuildOrder>527</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\StlMap.cpp">
+            <BuildOrder>528</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\StlQueue.cpp">
+            <BuildOrder>529</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\StlSet.cpp">
+            <BuildOrder>530</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\StringTokenizer.cpp">
+            <BuildOrder>531</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\Timer.cpp">
+            <BuildOrder>532</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\TimerTask.cpp">
+            <BuildOrder>533</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\UUID.cpp">
+            <BuildOrder>534</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\Adler32.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>582</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\CheckedInputStream.cpp">
+            <BuildOrder>583</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\CheckedOutputStream.cpp">
+            <BuildOrder>584</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\Checksum.cpp">
+            <BuildOrder>585</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\CRC32.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>586</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\DataFormatException.cpp">
+            <BuildOrder>587</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\Deflater.cpp">
+            <BuildOrder>588</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\DeflaterOutputStream.cpp">
+            <BuildOrder>589</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\Inflater.cpp">
+            <BuildOrder>590</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\InflaterInputStream.cpp">
+            <BuildOrder>591</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\src\main\decaf\util\zip\ZipException.cpp">
+            <BuildOrder>592</BuildOrder>
+        </CppCompile>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppStaticLibrary</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">True</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">False</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                </Excluded_Packages>
+            </CPlusPlusBuilder.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzread.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\trees.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\infback.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzlib.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\crc32.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzclose.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inflate.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzread.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inffast.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inflate.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\zutil.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\apr-1.6.3\Win32\Release\apr.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzlib.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\deflate.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\infback.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin64\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\trees.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName=".\Build\activemq_cpp_lib.lib" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>activemq_cpp_lib.lib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\uncompr.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\deflate.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\zutil.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inffast.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzwrite.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\uncompr.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\crc32.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzclose.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName=".\Win32\Debug\activemq_cpp_lib.lib" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>activemq_cpp_lib.lib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzwrite.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\adler32.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\adler32.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inftrees.c" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inftrees.c" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_CppLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_CppLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>
