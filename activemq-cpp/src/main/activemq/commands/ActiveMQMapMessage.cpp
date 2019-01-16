@@ -96,7 +96,13 @@ bool ActiveMQMapMessage::equals(const DataStructure* value) const {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-void ActiveMQMapMessage::clearBody() throw (cms::CMSException) {
+void ActiveMQMapMessage::clearBody()
+// Dynamic exceptions specification is no more supported in C++17.
+#ifndef __CODEGEARC__
+
+	throw (cms::CMSException)
+#endif
+{
     ActiveMQMessageTemplate<cms::MapMessage>::clearBody();
     this->getMap().clear();
 }

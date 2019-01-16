@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A2E2B250-1483-4F6B-A5F1-72F9AB7B941A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="activemq_cpp_lib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\src\test\activemq_cpp_unit_test.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\src\examples\bcc\HelloActiveMQ_CPPWorld.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="activemq_cpp_lib">
+        <MSBuild Projects="activemq_cpp_lib.cbproj"/>
+    </Target>
+    <Target Name="activemq_cpp_lib:Clean">
+        <MSBuild Projects="activemq_cpp_lib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="activemq_cpp_lib:Make">
+        <MSBuild Projects="activemq_cpp_lib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="activemq_cpp_unit_test">
+        <MSBuild Projects="..\src\test\activemq_cpp_unit_test.cbproj"/>
+    </Target>
+    <Target Name="activemq_cpp_unit_test:Clean">
+        <MSBuild Projects="..\src\test\activemq_cpp_unit_test.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="activemq_cpp_unit_test:Make">
+        <MSBuild Projects="..\src\test\activemq_cpp_unit_test.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="HelloActiveMQ_CPPWorld">
+        <MSBuild Projects="..\src\examples\bcc\HelloActiveMQ_CPPWorld.cbproj"/>
+    </Target>
+    <Target Name="HelloActiveMQ_CPPWorld:Clean">
+        <MSBuild Projects="..\src\examples\bcc\HelloActiveMQ_CPPWorld.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloActiveMQ_CPPWorld:Make">
+        <MSBuild Projects="..\src\examples\bcc\HelloActiveMQ_CPPWorld.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="activemq_cpp_lib;activemq_cpp_unit_test;HelloActiveMQ_CPPWorld"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="activemq_cpp_lib:Clean;activemq_cpp_unit_test:Clean;HelloActiveMQ_CPPWorld:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="activemq_cpp_lib:Make;activemq_cpp_unit_test:Make;HelloActiveMQ_CPPWorld:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{AA72BAF8-051B-4971-8F5E-B93E0FE474BB}</ProjectGuid>
-        <ProjectVersion>18.4</ProjectVersion>
+        <ProjectVersion>18.5</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
@@ -57,16 +57,18 @@
         <PackageImports>CloudService;DataSnapFireDAC;emsclient;emsclientfiredac;FireDAC;FireDACCommon;FireDACCommonDriver;FireDACIBDriver;FireDACSqliteDriver;inet;RESTBackendComponents;RESTComponents;soapmidas;soaprtl;soapserver;$(PackageImports)</PackageImports>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>activemq_cpp_lib</SanitizedProjectName>
-        <IncludePath>..\src\main\decaf\lang\exceptions\;..\src\main\decaf\util\concurrent\locks\;..\src\main\decaf\util\concurrent\atomic\;..\src\main\decaf\util\zip\;..\src\main\decaf\util\logging\;..\src\main\decaf\util\concurrent\;..\src\main\decaf\util\comparators\;..\src\main\decaf\util\;..\src\main\decaf\security\cert\;..\src\main\decaf\security\auth\x500\;..\src\main\decaf\security\;..\src\main\decaf\nio\;..\src\main\decaf\net\;..\src\main\decaf\io\;..\src\main\decaf\internal\util\zip\;..\src\main\decaf\internal\util\concurrent\windows\;..\src\main\decaf\internal\util\concurrent\;..\src\main\decaf\internal\util\;..\src\main\decaf\internal\security\windows\;..\src\main\decaf\internal\security\provider\crypto\;..\src\main\decaf\internal\security\provider\;..\src\main\decaf\internal\security\;..\src\main\decaf\internal\nio\;..\src\main\decaf\internal\net\tcp\;..\src\main\decaf\internal\net\ssl\openssl\;..\src\main\decaf\internal\net\ssl\;..\src\main\decaf\internal\net\https\;..\src\main\decaf\internal\net\http\;..\src\main\decaf\internal\net\file\;..\src\main\decaf\internal\net\;..\src\main\decaf\internal\io\;..\src\main\decaf\internal\;..\src\main\activemq\wireformat\stomp\;..\src\main\activemq\wireformat\openwire\utils\;..\src\main\activemq\wireformat\openwire\marshal\generated\;..\src\main\activemq\wireformat\openwire\marshal\;..\src\main\activemq\wireformat\openwire\;..\src\main\activemq\wireformat\;..\src\main\activemq\util\;..\src\main\activemq\transport\tcp\;..\src\main\activemq\transport\mock\;..\src\main\activemq\transport\logging\;..\src\main\activemq\transport\inactivity\;..\src\main\activemq\transport\failover\;..\src\main\activemq\transport\correlator\;..\src\main\activemq\transport\;..\src\main\activemq\threads\;..\src\main\activemq\state\;..\src\main\activemq\library\;..\src\main\activemq\io\;..\src\main\activemq\exceptions\;..\src\main\activemq\core\policies\;..\src\main\activemq\core\kernels\;..\src\main\activemq\core\;..\src\main\activemq\commands\;..\src\main;..\src\main\cms\;..\src\main\activemq\cmsutil\;C:\Users\alexba\Documents\Embarcadero\Studio\apr-1.6.3\bcc;C:\Users\alexba\Documents\Embarcadero\Studio\apr-1.6.3\include;$(IncludePath)</IncludePath>
+        <IncludePath>..\src\main\decaf\lang\exceptions\;..\src\main\decaf\util\concurrent\locks\;..\src\main\decaf\util\concurrent\atomic\;..\src\main\decaf\util\zip\;..\src\main\decaf\util\logging\;..\src\main\decaf\util\concurrent\;..\src\main\decaf\util\comparators\;..\src\main\decaf\util\;..\src\main\decaf\security\cert\;..\src\main\decaf\security\auth\x500\;..\src\main\decaf\security\;..\src\main\decaf\nio\;..\src\main\decaf\net\;..\src\main\decaf\io\;..\src\main\decaf\internal\util\zip\;..\src\main\decaf\internal\util\concurrent\windows\;..\src\main\decaf\internal\util\concurrent\;..\src\main\decaf\internal\util\;..\src\main\decaf\internal\security\windows\;..\src\main\decaf\internal\security\provider\crypto\;..\src\main\decaf\internal\security\provider\;..\src\main\decaf\internal\security\;..\src\main\decaf\internal\nio\;..\src\main\decaf\internal\net\tcp\;..\src\main\decaf\internal\net\ssl\openssl\;..\src\main\decaf\internal\net\ssl\;..\src\main\decaf\internal\net\https\;..\src\main\decaf\internal\net\http\;..\src\main\decaf\internal\net\file\;..\src\main\decaf\internal\net\;..\src\main\decaf\internal\io\;..\src\main\decaf\internal\;..\src\main\activemq\wireformat\stomp\;..\src\main\activemq\wireformat\openwire\utils\;..\src\main\activemq\wireformat\openwire\marshal\generated\;..\src\main\activemq\wireformat\openwire\marshal\;..\src\main\activemq\wireformat\openwire\;..\src\main\activemq\wireformat\;..\src\main\activemq\util\;..\src\main\activemq\transport\tcp\;..\src\main\activemq\transport\mock\;..\src\main\activemq\transport\logging\;..\src\main\activemq\transport\inactivity\;..\src\main\activemq\transport\failover\;..\src\main\activemq\transport\correlator\;..\src\main\activemq\transport\;..\src\main\activemq\threads\;..\src\main\activemq\state\;..\src\main\activemq\library\;..\src\main\activemq\io\;..\src\main\activemq\exceptions\;..\src\main\activemq\core\policies\;..\src\main\activemq\core\kernels\;..\src\main\activemq\core\;..\src\main\activemq\commands\;..\src\main;..\src\main\cms\;..\src\main\activemq\cmsutil\;..\..\..\remote_apr\bcc;..\..\..\remote_apr\include;$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>..\src\main\decaf\lang\;..\src\main\decaf\lang\exceptions\;..\src\main\decaf\util\concurrent\locks\;..\src\main\decaf\util\concurrent\atomic\;..\src\main\decaf\util\zip\;..\src\main\decaf\util\logging\;..\src\main\decaf\util\concurrent\;..\src\main\decaf\util\comparators\;..\src\main\decaf\util\;..\src\main\decaf\security\cert\;..\src\main\decaf\security\auth\x500\;..\src\main\decaf\security\;..\src\main\decaf\nio\;..\src\main\decaf\net\;..\src\main\decaf\io\;..\src\main\decaf\internal\util\zip\;..\src\main\decaf\internal\util\concurrent\windows\;..\src\main\decaf\internal\util\concurrent\;..\src\main\decaf\internal\util\;..\src\main\decaf\internal\security\windows\;..\src\main\decaf\internal\security\provider\crypto\;..\src\main\decaf\internal\security\provider\;..\src\main\decaf\internal\security\;..\src\main\decaf\internal\nio\;..\src\main\decaf\internal\net\tcp\;..\src\main\decaf\internal\net\ssl\openssl\;..\src\main\decaf\internal\net\ssl\;..\src\main\decaf\internal\net\https\;..\src\main\decaf\internal\net\http\;..\src\main\decaf\internal\net\file\;..\src\main\decaf\internal\net\;..\src\main\decaf\internal\io\;..\src\main\decaf\internal\;..\src\main\activemq\wireformat\stomp\;..\src\main\activemq\wireformat\openwire\utils\;..\src\main\activemq\wireformat\openwire\marshal\generated\;..\src\main\activemq\wireformat\openwire\marshal\;..\src\main\activemq\wireformat\openwire\;..\src\main\activemq\wireformat\;..\src\main\activemq\util\;..\src\main\activemq\transport\tcp\;..\src\main\activemq\transport\mock\;..\src\main\activemq\transport\logging\;..\src\main\activemq\transport\inactivity\;..\src\main\activemq\transport\failover\;..\src\main\activemq\transport\correlator\;..\src\main\activemq\transport\;..\src\main\activemq\threads\;..\src\main\activemq\state\;..\src\main\activemq\library\;..\src\main\activemq\io\;..\src\main\activemq\exceptions\;..\src\main\activemq\core\policies\;..\src\main\activemq\core\kernels\;..\src\main\activemq\core\;..\src\main\activemq\commands\;..\src\main\cms\;..\src\main\activemq\cmsutil\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <AllPackageLibs>svn.lib;rtl.lib</AllPackageLibs>
         <Defines>__MT__;WIN32_LEAN_AND_MEAN;NOMINMAX;APR_DECLARE_STATIC;APU_DECLARE_STATIC;API_DECLARE_STATIC;WIN32;$(Defines)</Defines>
-        <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
         <SubProcessesNumber>4</SubProcessesNumber>
         <_TCHARMapping>char</_TCHARMapping>
         <BCC_PCHUsage>None</BCC_PCHUsage>
+        <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
+        <FeatureFilesAdded>false</FeatureFilesAdded>
+        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;AWButton_X1023;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CodeSiteExpressPkg;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;Jcl;JclContainers;JclDeveloperTools;JclVcl;JvAppFrm;JvBands;JvCmp;JvControls;JvCore;JvCrypt;JvCustom;JvDB;JvDlgs;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvStdCtrls;JvSystem;JvTimeFramework;JvWizards;JvXPCtrls;rtl;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -107,7 +109,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <Manifest_File>(None)</Manifest_File>
-        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="..\src\main\activemq\cmsutil\CachedConsumer.cpp">
@@ -2125,106 +2126,38 @@
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzread.c" Configuration="Release" Class="ProjectFile">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c260.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\trees.c" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="..\..\apr-1.6.3\Win32\Release\apr.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c250.dll" Class="DependencyModule"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32260.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\infback.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64260mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzlib.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\crc32.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzclose.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inflate.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzread.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inffast.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inflate.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\zutil.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\apr-1.6.3\Win32\Release\apr.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName=".\Win32\Debug\activemq_cpp_lib.lib" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzlib.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\deflate.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\infback.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
@@ -2250,12 +2183,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\trees.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
@@ -2267,20 +2195,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\uncompr.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\deflate.c" Configuration="Debug" Class="ProjectFile">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32260mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -2289,49 +2220,29 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\zutil.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inffast.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzwrite.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule"/>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\uncompr.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64260.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\crc32.c" Configuration="Debug" Class="ProjectFile">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c260mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzclose.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
+                <DeployFile LocalName="$(BDS)\Redist\osx64\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -2340,44 +2251,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\activemq_cpp_lib.lib" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>activemq_cpp_lib.lib</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\gzwrite.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\adler32.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\adler32.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\crc32.c" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inftrees.c" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\src\main\decaf\internal\util\zip\inftrees.c" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -2393,6 +2274,12 @@
                 <DeployClass Name="AndroidClassesDexFile">
                     <Platform Name="Android">
                         <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -2429,6 +2316,12 @@
                 <DeployClass Name="AndroidSplashStyles">
                     <Platform Name="Android">
                         <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -2670,6 +2563,7 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
                 <DeployClass Name="ProjectOSXEntitlements"/>
                 <DeployClass Name="ProjectOSXInfoPList"/>
                 <DeployClass Name="ProjectOSXResource">
@@ -2737,6 +2631,7 @@
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
